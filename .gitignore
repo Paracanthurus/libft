@@ -1,0 +1,8 @@
+.DS_Store
+*.pdf
+main.c
+*.o
+*.a
+*.out
+libft_Tester/
+libft-unit-test/
