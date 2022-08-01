@@ -6,7 +6,7 @@
 #    By: aokubo <aokubo@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/07 16:16:37 by aokubo            #+#    #+#              #
-#    Updated: 2022/03/16 18:10:05 by aokubo           ###   ########.fr        #
+#    Updated: 2022/08/01 17:04:31 by aokubo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,14 @@ endif
 CC		= gcc
 AR		= ar rcs
 CFLAGS	= -Wall -Wextra -Werror
-INCLUDE	= -I.
+
+all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			$(AR) $(NAME) $^
 
-all:		$(NAME)
-
 .c.o:
-			$(CC) $(CFLAGS) $(INCLUDE) -c $<
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
 			$(RM) $(OBJS) $(B_OBJS)
